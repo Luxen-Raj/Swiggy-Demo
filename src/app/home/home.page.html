@@ -1,0 +1,78 @@
+<ion-content class="home-content">
+  <ion-grid class="header-grid">
+    <ion-row>
+      <ion-col size=7 class="ion-no-padding">
+        <ion-icon class="header_icon" name="location-outline"></ion-icon>
+        <label class="main_label">offer</label>
+        <p class="header_sub_text">Mumbai, Maharashtra, India</p>
+      </ion-col>
+      <ion-col size=5 class="ion-no-padding ion-text-right">
+        <div class="header_div2">
+          <ion-icon class="header_icon2" name="flower-outline"></ion-icon>
+          <label class="main_label2">Offers</label>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <div class="title_section">
+    <ion-icon class="title_icon" name="location-outline"></ion-icon>
+    <label class="title_label">All Restaurants Nearby</label>
+    <p class="title_sub_text">Discover unique tastes near you</p>
+  </div>
+
+
+
+
+  <div class="ordersbox">
+    <ion-row *ngFor="let item of foodList" (click)="viewFood(item)">
+      <ion-col size=4>
+        <div  class="food_div">
+          <img class="food_Img" [src]="item.photo_url" alt="">
+
+        </div>
+        <!-- <label class="label_text3">Order No </label> -->
+      </ion-col>
+      <ion-col size=8>
+        <div class="food_contant">
+          <label class="sub_text1">{{item.name}}</label>
+          <p class="sub_text2">{{item.price}}</p>
+          <p class="sub_text3">{{item.spcial}}</p>
+        </div>
+      </ion-col>
+    </ion-row>
+
+  </div>
+
+
+
+</ion-content>
+
+<ion-footer class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons>
+      <ion-tab-button  slot="start" class="notification-icon-button">
+        <div class="show_active_tabe"></div>
+        <ion-icon name="home"></ion-icon>
+        <ion-label class="active_ion_label">Home</ion-label>
+    </ion-tab-button>
+      <ion-tab-button  slot="start" class="notification-icon-button">
+        <ion-icon name="cafe-outline"></ion-icon>
+        <ion-label>Foods</ion-label>
+      </ion-tab-button>
+      <ion-tab-button  slot="start" class="notification-icon-button">
+        <ion-icon name="file-tray-full-outline"></ion-icon>
+        <ion-label>Instamart</ion-label>
+      </ion-tab-button>
+      <ion-tab-button  slot="start" class="notification-icon-button">
+        <ion-icon name="search-outline"></ion-icon>
+      <ion-label>Search</ion-label>
+    </ion-tab-button>
+    <ion-tab-button  slot="start"  class="notification-icon-button">
+      <ion-icon name="person-outline"></ion-icon>
+      <ion-label>Accounts</ion-label>
+  </ion-tab-button>
+
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>
